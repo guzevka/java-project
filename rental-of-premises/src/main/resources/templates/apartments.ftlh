@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>guzevka</title>
+    <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises</h1><hr>
-<h4>Апартаменты по всему миру</h4>
+<h1>rental of premises by guzevka | <a href="/login">Войти</a></h1><hr>
+<h4>Апартаменты по всей России</h4>
+<form action="/apartment/create" method="get">
+    <input type="submit" value="Добавить апартаменты">
+</form>
 <form action="/" method="get">
     Поиск по названию апартаментов: <input type="text" name="title"><br>
     <input type="submit" value="Поиск">
@@ -17,17 +20,6 @@
     <#else>
     <h3>Апартаментов не имеется</h3>
 </#list>
-<hr>
-<h3>Добавить новые апартаменты:</h3>
-<form action="/apartment/create" method="post" enctype="multipart/form-data">
-    Название апартаментов: <input type="text" name="title"/><br><br>
-    Описание апартаментов: <input type="text" name="description"/><br><br>
-    Страна апартаментов: <input type="text" name="country"/><br><br>
-    Город апартаментов: <input type="text" name="city"/><br><br>
-    Адрес апартаментов: <input type="text" name="address"/><br><br>
-    Цена: <input type="number" name="price"/><br><br>
-    Владелец: <input type="text" name="author"/><br><br>
-    <input type="submit" value="Добавить апартаменты"/>
-</form>
+
 </body>
 </html>

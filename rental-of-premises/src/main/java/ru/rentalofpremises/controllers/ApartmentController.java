@@ -18,11 +18,15 @@ import java.io.IOException;
 public class ApartmentController {
     private final ApartmentService apartmentService;
 
+    // СПИСОК ВСЕХ АПАРТАМЕНТОВ
+
     @GetMapping("/")
     public String apartments(@RequestParam(name = "title", required = false) String title, Model model) {
         model.addAttribute("apartments", apartmentService.listApartments(title));
         return "apartments";
     }
+
+    // ИНФА ПРО АПАРТАМЕНТЫ
 
     @GetMapping("/apartment/{id}")
     public String apartmentInfo(@PathVariable Long id, Model model) {
@@ -31,16 +35,33 @@ public class ApartmentController {
         return "apartment-info";
     }
 
+    // СОЗДАТЬ АПАРТАМЕНТЫ
+
+    @GetMapping("/apartment/create")
+    public String createApartment() throws IOException {
+        return "apartment-create";
+    }
+
     @PostMapping("/apartment/create")
     public String createApartment( Apartment apartment) throws IOException {
         apartmentService.saveApartment(apartment);
         return "redirect:/";
     }
 
+    // УДАЛИТЬ АПАРТАМЕНТЫ
+
     @PostMapping("/apartment/delete/{id}")
     public String deleteApartment(@PathVariable Long id) {
         apartmentService.deleteApartment(id);
         return "redirect:/";
     }
+
+    // АРЕНДОВАТЬ АПАРТАМЕНТЫ
+
+    /*@PostMapping("/apartment/rent/{id}")
+    public String rentApartment(@PathVariable Long id){
+
+    }*/
+
 }
 

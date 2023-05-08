@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>guzevka</title>
+    <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises</h1><hr>
+<h1>rental of premises by guzevka</h1><hr>
 <h4>Подробная информация об апартаментах</h4>
 <b>Название апартаментов: </b>${apartment.title}<br>
 <b>Описание апартаментов: </b>${apartment.description}<br>
@@ -14,6 +14,12 @@
 <b>Цена: </b>${apartment.price}<br>
 <b>Владелец: </b>${apartment.author}<br>
 <hr>
+<form action="/" method="get">
+    <input type="submit" value="Вернуться назад"/>
+</form><br>
+<form action="/apartment/rent/${apartment.id}" method="post">
+    <input type="submit" value="Арендовать апартаменты"/>
+</form><br>
 <form action="/apartment/delete/${apartment.id}" method="post">
     <input type="submit" value="Удалить апартаменты"/>
 </form>
