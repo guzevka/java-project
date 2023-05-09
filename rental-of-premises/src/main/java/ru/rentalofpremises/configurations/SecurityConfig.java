@@ -1,5 +1,5 @@
 package ru.rentalofpremises.configurations;
-/*
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,28 +8,27 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;*/
-/*
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+import ru.rentalofpremises.services.CustomUserDetailsService;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalAuthentication
 @RequiredArgsConstructor
 
 public class SecurityConfig {
+
     private final CustomUserDetailsService customUserDetailsService;
-//    @Bean
-//    protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        http.authorizeHttpRequests()
-//                .requestMatchers("/home").permitAll()
-//                .requestMatchers("/welcome").authenticated();
-//        return http.build();
-//    }
 
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests()
+        http.csrf()
+                .disable()
+                .authorizeHttpRequests()
                 .requestMatchers("/","apartment/**","/registration")
                 .permitAll()
                 .anyRequest().authenticated()
@@ -43,18 +42,9 @@ public class SecurityConfig {
         return http.build();
     }
 
-//    @Bean
-//    protected void configure(HttpSecurity http) {
-//        http.
-//    }
-
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService)
-                .passwordEncoder(passwordEncoder());
-    }
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder(8);
     }
-}*/
+}
 

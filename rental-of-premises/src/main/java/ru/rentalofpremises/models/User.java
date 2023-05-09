@@ -5,9 +5,9 @@ import lombok.Data;/*
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.rentalofpremises.models.enums.Role;*/
-/*import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.rentalofpremises.models.enums.Role;*/
+import ru.rentalofpremises.models.enums.Role;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -16,7 +16,7 @@ import java.util.Set;
 @Entity
 @Table(name = "users1")
 @Data
-public class User /* implements UserDetails*/ {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,7 +35,7 @@ public class User /* implements UserDetails*/ {
 
     @Column(name = "password", length = 1000)
     private String password;
-/*
+
 
     // SECURITY
 
@@ -73,5 +73,5 @@ public class User /* implements UserDetails*/ {
     @Override
     public boolean isEnabled() {
         return active;
-    }*/
+    }
 }
