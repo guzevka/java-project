@@ -12,6 +12,7 @@ import ru.rentalofpremises.models.Apartment;
 import ru.rentalofpremises.services.ApartmentService;
 
 import java.io.IOException;
+import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
@@ -21,8 +22,9 @@ public class ApartmentController {
     // СПИСОК ВСЕХ АПАРТАМЕНТОВ
 
     @GetMapping("/")
-    public String apartments(@RequestParam(name = "title", required = false) String title, Model model) {
+    public String apartments(@RequestParam(name = "title", required = false) String title, Model model, Principal principal) {
         model.addAttribute("apartments", apartmentService.listApartments(title));
+        model.addAttribute("user", apartmentService.getUserByPrincipal(principal));
         return "apartments";
     }
 
@@ -43,8 +45,8 @@ public class ApartmentController {
     }
 
     @PostMapping("/apartment/create")
-    public String createApartment( Apartment apartment) throws IOException {
-        apartmentService.saveApartment(apartment);
+    public String createApartment(Apartment apartment, Principal principal) throws IOException {
+        apartmentService.saveApartment(principal, apartment);
         return "redirect:/";
     }
 

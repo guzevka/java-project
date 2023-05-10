@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises by guzevka</h1><hr>
+<h1>rental of premises by guzevka ♥</h1><hr>
 <h4>Подробная информация об апартаментах</h4>
 <b>Название апартаментов: </b>${apartment.title}<br>
 <b>Описание апартаментов: </b>${apartment.description}<br>
@@ -12,7 +12,7 @@
 <b>Город апартаментов: </b>${apartment.city}<br>
 <b>Адрес апартаментов: </b>${apartment.address}<br>
 <b>Цена: </b>${apartment.price}<br>
-<b>Владелец: </b>${apartment.author}<br>
+<b>Владелец: </b> <a href="/user/${apartment.user.id}"> ${apartment.user.name}</a><br>
 <hr>
 <form action="/" method="get">
     <input type="submit" value="Вернуться назад"/>

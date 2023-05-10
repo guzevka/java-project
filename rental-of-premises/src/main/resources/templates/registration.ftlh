@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises</h1><hr>
+<h1>rental of premises by guzevka ♥</h1><hr>
 <h4>Регистрация</h4>
 <form action="/registration" method="post">
     Имя пользователя: <input type="text" name="name"><br><br>
@@ -16,5 +16,8 @@
 <#if errorMessage??>
     <h2 style="color: red">${errorMessage}</h2>
 </#if>
+<form action="/" method="get"><br>
+    <input type="submit" value="На главную страницу"/>
+</form><br>
 </body>
 </html>
