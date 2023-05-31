@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises by guzevka ♥</h1>
+<h1>rental of premises </h1>
 <h3>Редактирование пользователя ${user.name}</h3>
 <form action="/admin/user/edit" method="post">
     <#list roles as role>

@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises by guzevka ♥</h1><hr>
+<h1>rental of premises </h1><hr>
 <#if user.email??>
     <h3>Имя пользователя: <i>${user.name}</i></h3>
     <form action="/logout" method="post">

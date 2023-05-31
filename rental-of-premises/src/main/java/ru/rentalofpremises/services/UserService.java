@@ -26,7 +26,7 @@ public class UserService {
         if(userRepository.findByEmail(email) != null) return false;
         user.setActive(true);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.getRoles().add(Role.ROLE_ADMIN);
+        user.getRoles().add(Role.ROLE_USER);
         log.info("saving new user with email: {}", email);
         userRepository.save(user);
         return true;
@@ -61,6 +61,10 @@ public class UserService {
             }
         }
         userRepository.save(user);
+    }
+
+    public User findByEmail(String email){
+        return userRepository.findByEmail(email);
     }
 
 }

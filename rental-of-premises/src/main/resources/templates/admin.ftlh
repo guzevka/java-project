@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises by guzevka ♥</h1>
+<h1>rental of premises </h1>
 <hr>
 <h4>Панель администратора</h4>
 <table border="1">
@@ -35,5 +35,8 @@
     <h3>Пользователей нет</h3>
     </#list>
 </table>
+<form action="/" method="get">
+    <input type="submit" value="Вернуться назад"/>
+</form><br>
 </body>
 </html>

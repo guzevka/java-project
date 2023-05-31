@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises by guzevka ♥</h1><hr>
+<h1>rental of premises </h1><hr>
 <h3>Подробная информация о пользователе ${user.name}</h3>
 <b>Почта пользователя: </b> ${user.email} <br>
 <b>Номер телефона пользователя: </b> ${user.phoneNumber} <br>

@@ -4,7 +4,7 @@
     <title>APARTMENTS</title>
 </head>
 <body>
-<h1>rental of premises by guzevka ♥</h1><hr>
+<h1>rental of premises </h1><hr>
 <h4>Апартаменты по всей России</h4>
 <hr>
     <h3>Добавить новые апартаменты:</h3>

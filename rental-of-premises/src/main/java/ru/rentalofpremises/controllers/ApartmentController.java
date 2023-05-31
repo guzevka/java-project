@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import ru.rentalofpremises.models.Apartment;
+import ru.rentalofpremises.models.Rent;
+import ru.rentalofpremises.models.User;
 import ru.rentalofpremises.services.ApartmentService;
+import ru.rentalofpremises.services.UserService;
 
 import java.io.IOException;
 import java.security.Principal;
@@ -18,6 +20,8 @@ import java.security.Principal;
 @RequiredArgsConstructor
 public class ApartmentController {
     private final ApartmentService apartmentService;
+    private final UserService userService;
+    //private final RentService rentService;
 
     // СПИСОК ВСЕХ АПАРТАМЕНТОВ
 
@@ -60,10 +64,10 @@ public class ApartmentController {
 
     // АРЕНДОВАТЬ АПАРТАМЕНТЫ
 
-    /*@PostMapping("/apartment/rent/{id}")
-    public String rentApartment(@PathVariable Long id){
-
-    }*/
+    @PostMapping("/apartment/rent/{id}")
+    public String rentApartment(@PathVariable Rent rent, Model model){
+        return null;
+    }
 
 }
 
